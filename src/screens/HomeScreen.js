@@ -130,14 +130,7 @@ export default function HomeScreen({ navigation }) {
 
   const renderHeader = () => (
     <View style={styles.header}>
-      <ImageBackground
-        source={bannerImage}
-        style={styles.heroSection}
-        imageStyle={styles.heroBgImage}
-        resizeMode="cover"
-      >
-        <View style={styles.heroOverlay} />
-
+      <View style={styles.heroSection}>
         <TouchableOpacity
           style={styles.lockButton}
           onPress={handleLockPress}
@@ -153,6 +146,9 @@ export default function HomeScreen({ navigation }) {
           <Image source={logoImage} style={styles.logoImage} resizeMode="contain" />
         </Animated.View>
 
+        <Text style={styles.heroTitle}>Doña Mercedes</Text>
+        <Text style={styles.heroSubtitle}>Frutería de confianza</Text>
+
         {storeStatus.isOpen ? (
           <View style={styles.openBadge}>
             <Ionicons name="checkmark-circle" size={14} color="#FFF" />
@@ -164,7 +160,7 @@ export default function HomeScreen({ navigation }) {
             <Text style={styles.closedBadgeText}> {storeStatus.message}</Text>
           </View>
         )}
-      </ImageBackground>
+      </View>
 
       <View style={styles.searchContainer}>
         <Ionicons name="search" size={20} color="#999" />
@@ -336,16 +332,22 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 28,
     overflow: 'hidden',
     position: 'relative',
+    backgroundColor: '#1B5E20',
+    alignItems: 'center',
   },
-  heroBgImage: {
-    borderBottomLeftRadius: 28,
-    borderBottomRightRadius: 28,
+  heroTitle: {
+    color: '#FFFFFF',
+    fontSize: 22,
+    fontWeight: '800',
+    marginTop: 10,
+    zIndex: 2,
   },
-  heroOverlay: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0,0,0,0.35)',
-    borderBottomLeftRadius: 28,
-    borderBottomRightRadius: 28,
+  heroSubtitle: {
+    color: 'rgba(255,255,255,0.75)',
+    fontSize: 14,
+    fontWeight: '500',
+    marginTop: 2,
+    zIndex: 2,
   },
   lockButton: {
     position: 'absolute',
@@ -360,9 +362,11 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   logoImage: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    borderWidth: 3,
+    borderColor: 'rgba(255,255,255,0.3)',
   },
   openBadge: {
     flexDirection: 'row',
