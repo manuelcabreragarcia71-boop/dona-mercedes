@@ -65,62 +65,43 @@ export default function CartScreen({ navigation }) {
       return;
     }
 
-    Alert.alert(
-      'Confirmar pedido',
-      `Total: ${total.toFixed(2)}€\n\n¿Confirmar pedido?`,
-      [
-        { text: 'Cancelar', style: 'cancel' },
-        {
-          text: 'Confirmar',
-          onPress: async () => {
-            try {
-              setIsSubmitting(true);
+    try {
+      setIsSubmitting(true);
 
-              const orderData = {
-                items: cart.map(item => ({
-                  id: item.id,
-                  name: item.name,
-                  price: item.price,
-                  quantity: item.quantity,
-                  imageUrl: item.imageUrl
-                })),
-                total,
-                deliveryOption,
-                customerName: customerName.trim(),
-                customerPhone: customerPhone.trim(),
-                customerAddress: deliveryOption === DELIVERY_OPTIONS.DELIVERY ? customerAddress.trim() : null,
-                status: 'pending'
-              };
+      const orderData = {
+        items: cart.map(item => ({
+          id: item.id,
+          name: item.name,
+          price: item.price,
+          quantity: item.quantity,
+          imageUrl: item.imageUrl
+        })),
+        total,
+        deliveryOption,
+        customerName: customerName.trim(),
+        customerPhone: customerPhone.trim(),
+        customerAddress: deliveryOption === DELIVERY_OPTIONS.DELIVERY ? customerAddress.trim() : null,
+        status: 'pending'
+      };
 
-              await OrderService.create(orderData);
+      await OrderService.create(orderData);
 
-              Alert.alert(
-                '✓ Pedido realizado',
-                'Tu pedido ha sido recibido correctamente. Te contactaremos pronto.',
-                [
-                  {
-                    text: 'OK',
-                    onPress: () => {
-                      clearCart();
-                      setCustomerName('');
-                      setCustomerAddress('');
-                      setCustomerPhone('');
-                      navigation.navigate('Home');
-                    }
-                  }
-                ]
-              );
-            } catch (error) {
-              const msg = error?.message || JSON.stringify(error);
-              Alert.alert('Error al realizar pedido', msg);
-              console.error('Error submitting order:', error);
-            } finally {
-              setIsSubmitting(false);
-            }
-          }
-        }
-      ]
-    );
+      clearCart();
+      setCustomerName('');
+      setCustomerAddress('');
+      setCustomerPhone('');
+      Alert.alert(
+        '✓ Pedido realizado',
+        'Tu pedido ha sido recibido correctamente. Te contactaremos pronto.',
+        [{ text: 'OK', onPress: () => navigation.navigate('Home') }]
+      );
+    } catch (error) {
+      const msg = error?.message || JSON.stringify(error);
+      Alert.alert('Error al realizar pedido', msg);
+      console.error('Error submitting order:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (cart.length === 0) {
