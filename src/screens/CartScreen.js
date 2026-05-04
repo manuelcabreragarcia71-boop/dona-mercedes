@@ -15,7 +15,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../context/AppContext';
 import CartItem from '../components/CartItem';
 import { DELIVERY_OPTIONS } from '../utils/constants';
-import { isStoreOpen } from '../utils/businessHours';
 import { OrderService } from '../services/backendService';
 
 export default function CartScreen({ navigation }) {
@@ -31,14 +30,6 @@ export default function CartScreen({ navigation }) {
   const validateOrder = () => {
     if (cart.length === 0) {
       Alert.alert('Carrito vacío', 'Añade productos antes de realizar el pedido');
-      return false;
-    }
-
-    if (!isStoreOpen()) {
-      Alert.alert(
-        'Tienda cerrada',
-        'No se pueden realizar pedidos fuera del horario comercial.\n\nHorarios:\n• 10:00 - 14:00\n• 17:00 - 21:00'
-      );
       return false;
     }
 
@@ -111,7 +102,8 @@ export default function CartScreen({ navigation }) {
                 ]
               );
             } catch (error) {
-              Alert.alert('Error', 'No se pudo realizar el pedido. Inténtalo de nuevo.');
+              const msg = error?.message || JSON.stringify(error);
+              Alert.alert('Error al realizar pedido', msg);
               console.error('Error submitting order:', error);
             } finally {
               setIsSubmitting(false);
