@@ -1,0 +1,177 @@
+[
+  {
+    "name": "Tomate",
+    "price": 2.50,
+    "description": "Tomate fresco de la huerta, ideal para ensaladas",
+    "available": true,
+    "category": "verduras"
+  },
+  {
+    "name": "Manzana Golden",
+    "price": 1.90,
+    "description": "Manzanas Golden dulces y crujientes",
+    "available": true,
+    "category": "frutas"
+  },
+  {
+    "name": "Plátano de Canarias",
+    "price": 1.50,
+    "description": "Plátanos maduros de Canarias",
+    "available": true,
+    "category": "frutas"
+  },
+  {
+    "name": "Naranja",
+    "price": 2.00,
+    "description": "Naranjas valencianas para zumo",
+    "available": true,
+    "category": "frutas"
+  },
+  {
+    "name": "Lechuga",
+    "price": 1.20,
+    "description": "Lechuga fresca y crujiente",
+    "available": true,
+    "category": "verduras"
+  },
+  {
+    "name": "Zanahoria",
+    "price": 1.80,
+    "description": "Zanahorias frescas del campo",
+    "available": true,
+    "category": "verduras"
+  },
+  {
+    "name": "Patata",
+    "price": 1.50,
+    "description": "Patatas para cocinar",
+    "available": true,
+    "category": "verduras"
+  },
+  {
+    "name": "Cebolla",
+    "price": 1.40,
+    "description": "Cebollas dulces",
+    "available": true,
+    "category": "verduras"
+  },
+  {
+    "name": "Pimiento Rojo",
+    "price": 2.80,
+    "description": "Pimientos rojos dulces",
+    "available": true,
+    "category": "verduras"
+  },
+  {
+    "name": "Pepino",
+    "price": 1.60,
+    "description": "Pepinos frescos para ensalada",
+    "available": true,
+    "category": "verduras"
+  },
+  {
+    "name": "Calabacín",
+    "price": 2.20,
+    "description": "Calabacines tiernos",
+    "available": true,
+    "category": "verduras"
+  },
+  {
+    "name": "Berenjena",
+    "price": 2.50,
+    "description": "Berenjenas frescas",
+    "available": true,
+    "category": "verduras"
+  },
+  {
+    "name": "Pera",
+    "price": 2.10,
+    "description": "Peras jugosas y dulces",
+    "available": true,
+    "category": "frutas"
+  },
+  {
+    "name": "Uva",
+    "price": 3.50,
+    "description": "Uvas sin semilla",
+    "available": true,
+    "category": "frutas"
+  },
+  {
+    "name": "Melón",
+    "price": 2.80,
+    "description": "Melón dulce y jugoso",
+    "available": true,
+    "category": "frutas"
+  },
+  {
+    "name": "Sandía",
+    "price": 1.20,
+    "description": "Sandía refrescante (precio por kg)",
+    "available": true,
+    "category": "frutas"
+  },
+  {
+    "name": "Fresa",
+    "price": 4.50,
+    "description": "Fresas frescas de temporada",
+    "available": true,
+    "category": "frutas"
+  },
+  {
+    "name": "Limón",
+    "price": 1.80,
+    "description": "Limones para zumo",
+    "available": true,
+    "category": "frutas"
+  },
+  {
+    "name": "Aguacate",
+    "price": 3.20,
+    "description": "Aguacates maduros",
+    "available": true,
+    "category": "frutas"
+  },
+  {
+    "name": "Brócoli",
+    "price": 2.40,
+    "description": "Brócoli fresco",
+    "available": true,
+    "category": "verduras"
+  },
+  {
+    "name": "Coliflor",
+    "price": 2.60,
+    "description": "Coliflor blanca y fresca",
+    "available": true,
+    "category": "verduras"
+  },
+  {
+    "name": "Espinaca",
+    "price": 2.00,
+    "description": "Espinacas frescas",
+    "available": true,
+    "category": "verduras"
+  },
+  {
+    "name": "Kiwi",
+    "price": 2.90,
+    "description": "Kiwis verdes",
+    "available": true,
+    "category": "frutas"
+  },
+  {
+    "name": "Mango",
+    "price": 3.80,
+    "description": "Mangos tropicales",
+    "available": true,
+    "category": "frutas"
+  },
+  {
+    "name": "Piña",
+    "price": 2.50,
+    "description": "Piña tropical dulce",
+    "available": true,
+    "category": "frutas"
+  }
+]
