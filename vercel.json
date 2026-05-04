@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npx expo export --platform web",
+  "buildCommand": "npx expo export --platform web && cp public/manifest.json dist/ && cp public/icon-192.png dist/ && cp public/icon-512.png dist/ && cp public/apple-touch-icon.png dist/ && cp public/privacy-policy.html dist/ && node scripts/inject-pwa.js",
   "outputDirectory": "dist",
   "framework": null,
   "rewrites": [

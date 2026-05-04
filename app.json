@@ -32,7 +32,13 @@
       "edgeToEdgeEnabled": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "name": "Doña Mercedes",
+      "shortName": "Doña Mercedes",
+      "themeColor": "#2E7D32",
+      "backgroundColor": "#1B2B1B",
+      "display": "standalone",
+      "startUrl": "/"
     },
     "plugins": [
       [
